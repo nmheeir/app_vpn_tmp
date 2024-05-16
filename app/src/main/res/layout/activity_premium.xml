@@ -70,7 +70,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listViewSubcription"
             android:layout_width="match_parent"
-            android:layout_height="326dp"
+            android:layout_height="200dp"
             android:divider="@android:color/transparent"
             android:dividerHeight="10dp" />
 

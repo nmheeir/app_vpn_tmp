@@ -2,17 +2,21 @@ package com.example.app_vpn.ui.custom
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_vpn.R
 import com.example.app_vpn.data.local.Benefit
 import com.example.app_vpn.data.local.Subcription
 import com.example.app_vpn.util.enable
+import com.google.android.material.card.MaterialCardView
 
 class CustomSubcriptionAdapter(
     private val list: List<Subcription>,
@@ -47,7 +51,18 @@ class CustomSubcriptionAdapter(
         // Xác định trạng thái checked của RadioButton
         holder.radioButtonPricing.isChecked = subscription.selected
 
-        holder.itemView.setOnClickListener {
+        // Sửa màu border dựa vào trạng thái checked của RadioButton
+        val materialCardView = holder.itemView as MaterialCardView
+
+        holder.radioButtonPricing.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                materialCardView.strokeColor = ContextCompat.getColor(holder.itemView.context, android.R.color.holo_orange_light)
+            } else {
+                materialCardView.strokeColor = ContextCompat.getColor(holder.itemView.context, android.R.color.white)
+            }
+        }
+
+        holder.radioButtonPricing.setOnClickListener {
             // Thực hiện logic chọn item
             list.forEach { it.selected = false }
             subscription.selected = true
