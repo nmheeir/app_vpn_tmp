@@ -2,16 +2,10 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="PaymentVipActivity">
-        <State />
-      </entry>
-      <entry key="SuccessActivity">
-        <State />
-      </entry>
-      <entry key="VerificationActivity">
-        <State />
-      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="premium">
         <State />
       </entry>
     </value>

@@ -43,6 +43,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.premium.premium"
+            android:exported="true" />
         <activity
             android:name=".ui.auth.AuthActivity"
             android:exported="true" />
